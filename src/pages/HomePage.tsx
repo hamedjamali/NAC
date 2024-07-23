@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { FC, useState } from 'react';
 import { useUserStore } from '../store/userStore';
 import UserList from '../components/UserList';
 import UserForm from '../components/UserForm';
 import Pagination from '../components/Pagination';
 
-const HomePage: React.FC = () => {
+const HomePage: FC = () => {
   const users = useUserStore((state) => state.users);
 
-  const [currentPage, setCurrentPage] = React.useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
   const usersPerPage = 10;
   const totalPages = Math.ceil(users.length / usersPerPage);
 

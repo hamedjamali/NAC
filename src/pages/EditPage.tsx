@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useUserStore } from '../store/userStore';
 import { useParams, useNavigate } from 'react-router-dom';
@@ -81,7 +81,7 @@ const Title = styled.h2`
   margin-bottom: 40px;
 `;
 
-const EditPage: React.FC = () => {
+const EditPage: FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const users = useUserStore((state) => state.users);
@@ -94,7 +94,7 @@ const EditPage: React.FC = () => {
     defaultValues: user
   });
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (user) {
       setValue('name', user.name);
       setValue('userName', user.userName);

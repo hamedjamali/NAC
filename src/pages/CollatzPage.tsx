@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { FC, useState } from 'react';
 import styled from '@emotion/styled';
 
 const PageWrapper = styled.div`
@@ -50,7 +50,7 @@ const Result = styled.div`
   font-size: 18px;
 `;
 
-const CollatzPage: React.FC = () => {
+const CollatzPage: FC = () => {
   const [number, setNumber] = useState<number | string>('');
   const [loops, setLoops] = useState<number | null>(null);
 
